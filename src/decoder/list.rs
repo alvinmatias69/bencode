@@ -122,4 +122,24 @@ mod test {
             _ => ()
         }
     }
+
+    #[test]
+    fn should_return_list_of_dictionary() {
+        // given
+        let list = String::from("ld3:key5:valueee");
+
+        // when
+        let decoded = parse_list(&list);
+
+        // then
+        if let DataType::List(list) = decoded {
+            if let DataType::Dictionary(dict) = &list[0] {
+                if let Some(value) = dict.get("key") {
+                    if let DataType::ByteString(string) = value {
+                        assert_eq!(*string, String::from("value"));
+                    }
+                }
+            }
+        }
+    }
 }

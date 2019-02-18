@@ -1,10 +1,7 @@
-mod data_type;
+pub mod data_type;
 mod decoder;
 
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
+pub fn decode(string: &String) -> data_type::DataType {
+    let result = decoder::parse(string);
+    result
 }
