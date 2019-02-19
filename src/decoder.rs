@@ -1,4 +1,4 @@
-mod integer;
+mod number;
 mod byte_string;
 mod list;
 mod dictionary;
@@ -17,7 +17,7 @@ fn marshall_input<T: Iterator<Item = char>> (iterator: &mut Peekable<T>) -> Data
     if let Some(c) = iterator.peek() {
         match c {
             'i' => {
-                result = integer::parse(iterator);
+                result = number::parse(iterator);
             },
             '0'...'9' => {
                 result = byte_string::parse(iterator);

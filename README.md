@@ -28,7 +28,7 @@ d4:listl3:foo3:bare3:numi420ee
 
 ## TODO
 * [x] Add dictionary parsing
-* [ ] Add object encoding
+* [x] Add object encoding
 * [ ] Refine library interface
 
 ---
